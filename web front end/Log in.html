@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Log in </title>    
+    <link rel="stylesheet" type="text/css" href="style_login.css">    
+</head>    
+<body> 
+<!--try   
+    <h2>Welcome</h2><br>    
+    <div class="login">    
+    <form id="login" method="get" action="login.php">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br>    
+        <input type="button" name="log" id="log" value="Login">       
+        <br><br>    
+        <input type="checkbox" id="check">    
+        <span>Remember me</span>    
+        <br><br>    
+           
+    </form>     
+</div> 
+-->  
+<form action="action_page.php" method="post">
+    <h2>Welcome</h2><br>
+  
+    <div class="container">
+        <div class="block">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        </div>
+        <div class="block">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        </div>
+      <button type="submit">Login</button>
+      
+    </div>
+  
+</form>
+
+</body>    
+</html>     
+
+
+
