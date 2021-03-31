@@ -69,7 +69,140 @@ body {
     }
   }
   
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 70%;
+  width: 160px;
+  top: 94px;
+  left: 24px;
+  position: absolute;
+  z-index: 1;
+  background-color: #63A583;
+  overflow-x: hidden;
+  padding-top: 16px;
+  font-family: "Montserrat";
+  line-height: 2.0;
+}
+
+/* Style sidebar links */
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #f1f1f1;
+  display: block;
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #E4DBD9;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+/*profile layout*/
+.CarbonScoreChart{
+position: absolute;
+width: 250px;
+height: 250px;
+left: 247px;
+top: 122px;
+float: left;
+
+}
+
+.CarbonScorePara{
+position: absolute;
+width: 679px;
+height: 270px;
+left: 550px;
+top: 70px;
+float: right;
+
+
+}
+
+.AverageScoreChart{
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  left: 1003px;
+  top: 449px;
+  float: right;
   
+}
+  
+.AverageScorePara{
+  position: absolute;
+  width: 679px;
+  height: 270px;
+  left: 247px;
+  top: 400px;
+  float: left;
+}
+
+table{
+  position: absolute;
+  width: 1040px;
+  left: 357px;
+  top: 800px;
+  bottom: 100px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  border: 1px solid #6E93D6;
+  border-radius: 0px 4px 0px 0px;
+}
+
+caption{
+  font-family: Montserrat;
+  font-size: 50px;
+  text-align: center;
+  color: #000000;
+}
+
+th{
+  background-color: #6E93D6;
+  text-align: center;
+
+}
+
+td{
+  text-align: center; 
+}
+
+
+h3{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 58px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+}
+h4{
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: center;
+  color: #000000;
+}
+
 /*FAQ title*/
 h3 {
               
