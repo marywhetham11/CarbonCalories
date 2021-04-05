@@ -1,0 +1,136 @@
+<!doctype html>
+
+<head>
+    <title>History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <script src="{{ url_for('static',filename='js/pie.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/line.js') }}"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/core.js "></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+</head>
+
+<body>
+
+    <!--Header-->
+    <div class="header">
+        <div class="header-left">
+            <span class="iconify" data-icon="simple-icons:countingworkspro" data-inline="false" data-width="45px" data-height="45px"></span>
+            <h1>Carbon Calories</h1>
+        </div>
+        <div class="header-right">
+            <a class="Home" a href="/">Home</a>
+            <a class="FAQ" a href="/faq">FAQ</a>
+            <a class="Profile" a href="/profile">Profile</a>
+            <a class="Log out" a href="/logout">Log out</a>
+        </div>
+
+    </div>
+
+    <div class="header-placeholder"></div>
+
+    <div class="profile">
+        <!-- The sidebar -->
+        <div class="sidebar">
+            <div class="inner-sidebar">
+                <div class="sidebar-container">
+                    <a href="/profile">
+                        <span class="iconify" data-icon="carbon:settings" data-inline="false" data-width="45px" data-height="45px"></span> Score
+                    </a>
+                    <a href="/history">
+                        <span class="iconify" data-icon="ic:baseline-content-paste" data-inline="false" data-width="45px" data-height="45px"></span> History
+                    </a>
+                    <a href="/analytics" class="active">
+                        <span class="iconify" data-icon="ion:analytics" data-inline="false" data-width="45px" data-height="45px"></span> Analytics
+                    </a>
+                    <a href="/search">
+                        <span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" data-width="45px" data-height="45px"></span> Search
+                    </a>
+                    <a href="/settings">
+                        <span class="iconify" data-icon="carbon:progress-bar-round" data-inline="false" data-width="45px" data-height="45px"></span> Settings
+                    </a>
+                </div>
+                <div class="sidebar-footer">
+                    <a href="">
+                        <span class="iconify" data-icon="gg:profile" data-inline="false" data-width="45px" data-height="45px"></span> {{ username }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="placeholder"></div>
+
+        <div class="history analytics">
+
+            <div class="pie">
+
+                <div class="graphs">
+                    <!--<a id="piechart"></a>-->
+                    <div>
+                        <h3>How often do you buy local?</h3>
+                        <hr>
+                        <h4>Choosing to buying locally grown foods will decrease your carbon footprint!
+                        </h4>
+                    </div>
+
+                    <div id="chartdivpie1" class="chartdiv"></div>
+
+                    <script>
+                        var data = JSON.parse('{{ pie1 | tojson | safe}}');
+                        for (let i = 0; i < data.length; i++) {
+                            data[i].color = am4core.color(data[i].color);
+                        }
+                        createPie(data, "chartdivpie1");
+                    </script>
+
+
+                </div>
+
+                <div class="graphs">
+                    <!--<a id="piechart"></a>-->
+
+                    <div>
+                        <h3>How often do you choose plant-based?</h3>
+                        <hr>
+                        <h4>Plant-based alternatives have a drastically lower cabon footprint than their meat counter parts.
+                        </h4>
+                    </div>
+
+                    <div id="chartdivpie2" class="chartdiv"></div>
+
+                    <script>
+                        var data = JSON.parse('{{ pie2 | tojson | safe}}');
+                        for (let i = 0; i < data.length; i++) {
+                            data[i].color = am4core.color(data[i].color);
+                        }
+                        createPie(data, "chartdivpie2");
+                    </script>
+
+
+                </div>
+            </div>
+
+            <div class="charts chart-1">
+                <h3>Your Carbon History</h3>
+                <div id="chartdivline1" class="linediv"></div>
+                <script>
+                    createLine(JSON.parse('{{ line1 | tojson | safe}}'), "chartdivline1");
+                </script>
+            </div>
+
+            <div class="charts chart-2">
+                <h3>Average Carbon History</h3>
+                <div id="chartdivline2" class="linediv"></div>
+                <script>
+                    createLine(JSON.parse('{{ line2 | tojson | safe}}'), "chartdivline2");
+                </script>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

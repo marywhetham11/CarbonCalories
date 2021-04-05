@@ -1,0 +1,774 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #FFFFFF, 100%;
+    margin: 0;
+    width: 100vw;
+}
+
+.header {
+    position: fixed;
+    overflow: hidden;
+    height: 77px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    padding: 2.5px 0 1px 1px;
+    background: #63A583;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header-placeholder {
+    width: 100%;
+    height: 77px;
+}
+
+
+/* Style the header links */
+
+.header a {
+    float: left;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 32px;
+    border-radius: 15px;
+    margin: auto 0;
+}
+
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Change the background color on mouse-over */
+
+.header a:hover {
+    background-color: #E4DBD9;
+    color: black;
+}
+
+
+/* Style the active/current link*/
+
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+    text-align: center;
+}
+
+
+/* Float the link section to the right */
+
+.header-right,
+.header-left {
+    float: right;
+    text-align: center;
+    height: 100%;
+    margin: 0 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    color: white;
+}
+
+.header-left h1 {
+    margin: 0 0 2px 20px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 0 4px 4px rgb(0, 0, 0, 0.5);
+}
+
+.header-right a {
+    padding: 12px 20px;
+}
+
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}
+
+.poster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 75vh;
+    background-image: linear-gradient(rgba(110, 147, 214, 0.38), rgba(110, 147, 214, 0.38)), url('../homepicture.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 0 10%;
+}
+
+.poster h1 {
+    font-size: 4em;
+}
+
+.poster h2 {
+    font-size: 2em;
+}
+
+
+/*FAQ title*/
+
+h3 {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1;
+    margin: 0 7% 2% 7%;
+    /* or 28% */
+    color: #000000;
+}
+
+
+/*FAQ page text*/
+
+.faq-content {
+    margin-top: 3%;
+}
+
+p,
+.faq-content ul {
+    left: 108px;
+    top: 189px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 20px 7%;
+    height: auto;
+    /* or 139% */
+    color: #000000;
+}
+
+
+/*home page icon*/
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+
+.column {
+    width: 23.3%;
+    height: 100%;
+    padding: 5px;
+    margin: 0 5%;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgb(0, 0, 0, 0.3);
+    background-color: white;
+    flex-grow: 1;
+}
+
+.inner-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* Clear floats after image containers */
+
+
+/*in a row*/
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #E4DBD9;
+    padding: 5%;
+}
+
+.column h1 {
+    font-size: 9vw;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+.column h2 {
+    font-size: 2.5vw;
+    font-weight: 700;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+.column img,
+.column svg {
+    width: 10.95vw;
+    height: 10.95vw;
+}
+
+.row a:link,
+.row a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+
+/*Log in page*/
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto;
+    /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* Close button on hover */
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+}
+
+.profile a {
+    font-size: 2.5vw;
+}
+
+.sidebar {
+    position: fixed;
+    width: 23%;
+    height: 84.5vh;
+    margin: 1.5%;
+    background-color: #63A583;
+    box-shadow: 2px 2px 2px rgba(176, 176, 176, 0.15);
+    border-radius: 5px;
+}
+
+.inner-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-footer {
+    margin-bottom: 10%;
+}
+
+.sidebar a {
+    margin: 4%;
+    display: flex;
+}
+
+.sidebar svg {
+    margin: auto 5% auto 0;
+}
+
+.sidebar .active {
+    font-weight: 700;
+}
+
+.sidebar a:link,
+.sidebar a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.placeholder {
+    width: 26%;
+}
+
+.content,
+.settings,
+.history {
+    width: 70%;
+    margin: 1.5%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    display: flex;
+    text-align: center;
+}
+
+.content,
+.settings {
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.settings {
+    justify-content: center;
+}
+
+#login h4,
+.settings h4 {
+    margin: 0 auto;
+}
+
+.history {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/*profile layout*/
+
+.scores {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 3% 0;
+}
+
+.CarbonScoreChart {
+    height: 300px;
+    width: 300px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.CarbonScorePara {
+    height: 300px;
+    width: 66%;
+}
+
+.AverageScoreChart {
+    height: 300px;
+    width: 300px;
+}
+
+.AverageScorePara {
+    height: 300px;
+    width: 66%;
+}
+
+.profile hr {
+    width: 30%;
+    border: 2px solid #000000;
+}
+
+.table {
+    margin: 2%;
+    font-weight: normal;
+    width: 96%;
+}
+
+table {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    border-radius: 20px;
+    border-collapse: collapse;
+    margin: 4% 0;
+    width: 100%;
+}
+
+.table h3 {
+    font-family: Montserrat;
+    font-size: 50px;
+    text-align: center;
+    color: #000000;
+}
+
+th {
+    background-color: #6E93D6;
+    text-align: center;
+    border: 1px solid #6E93D6;
+    padding: 1% 0;
+}
+
+td {
+    text-align: center;
+    border: 1px solid #6E93D6;
+    padding: 1% 0;
+}
+
+.profile h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4.1vw;
+    text-align: center;
+    color: #000000;
+}
+
+.scores h3,
+.graphs h3,
+.charts h3 {
+    padding-bottom: 3%;
+}
+
+.profile h4 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.75vw;
+    line-height: 45px;
+    text-align: center;
+    color: #000000;
+}
+
+.CarbonScoreChart svg,
+.AverageScoreChart svg,
+circle {
+    width: 300px;
+    height: 300px;
+}
+
+circle {
+    fill: none;
+    stroke-width: 30;
+    transform: translate(255px, 25px) scale(-1, 1);
+    stroke-linecap: round;
+}
+
+.number {
+    position: relative;
+    bottom: 285px;
+    left: 85px;
+    color: #fff;
+    text-align: left;
+}
+
+.CarbonScoreChart h2,
+.AverageScoreChart h2 {
+    font-size: 80px;
+    color: black;
+}
+
+.CarbonScoreChart span,
+.AverageScoreChart span {
+    font-size: 24px;
+    opacity: .7;
+    color: yellow;
+}
+
+@keyframes percent {
+    0% {
+        stroke-dashoffset: 0;
+        stroke-width: 0;
+    }
+}
+
+.pie {
+    display: flex;
+}
+
+.graphs {
+    width: 50%;
+    height: 300px;
+}
+
+.graphs h3 {
+    font-size: 2.5vw;
+    line-height: 1;
+}
+
+.graphs h4 {
+    font-size: 2vw;
+}
+
+.settings form {
+    width: 60%;
+    padding: 0 20%;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* inputs */
+
+label {
+    text-align: right;
+    margin-right: 15px;
+}
+
+.settings label {
+    margin-right: 0;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+select {
+    left: 100px;
+    top: 139px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 15px 0px;
+    margin-left: 15px px;
+    /*display: inline-block;*/
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+.settings input[type=text],
+.settings input[type=password],
+.settings input[type=email],
+.settings select {
+    background-color: #E4DBD9;
+    color: black;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+    /* Firefox */
+}
+
+select {
+    color: rgb(118, 118, 118);
+}
+
+
+/* Set a style for buttons */
+
+button {
+    background-color: #E4DBD9;
+    color: #000000;
+    padding: 14px 20px;
+    margin: 30px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+.settings label {
+    font-weight: normal;
+}
+
+.newsletter {
+    font-size: 1.25vw;
+    margin: 2% 0;
+}
+
+.settings .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.profile-pic {
+    display: flex;
+    justify-content: center;
+}
+
+.settings .change {
+    font-size: 18px;
+    color: #0AA6FE;
+}
+
+.settings {
+    padding: 2% 0;
+}
+
+.charts {
+    width: 100%;
+}
+
+.chart-1 {
+    margin-top: 410px;
+}
+
+.chart-2 {
+    margin-top: 50px;
+}
+
+.analytics {
+    margin-top: 3%;
+}
+
+.search {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2%;
+    padding: 0 2%;
+}
+
+.to-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search input[type=text] {
+    width: 10vw;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 1%;
+    margin: 0 2%;
+    width: 100%;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.search button {
+    width: 10vw;
+    margin: 0 2%;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    background-color: #6E93D6;
+    border: 1px solid #111B1E;
+    color: white;
+    margin: 1%;
+}
+
+.product h2 {
+    font-size: 2vw;
+    margin: 2% 3%;
+}
+
+
+/* Add a hover effect for buttons */
+
+button:hover {
+    opacity: 0.8;
+}
+
+.chartdiv {
+    height: 400px;
+    width: 100%;
+    margin-top: -50px;
+}
+
+.linediv {
+    width: 100%;
+    height: 300px;
+}
+
+tspan {
+    font-size: 1vw;
+    color: #2F4C58;
+}
+
+
+/* Add Zoom Animation */
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}

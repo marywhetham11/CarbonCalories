@@ -1,0 +1,8 @@
+Flask==1.1.2
+Flask-MySQLdb==0.2.0
+mysqlclient==1.4.1
+gunicorn==19.3.0
+Flask_Cors==3.0.8
+numpy==1.20.2
+matplotlib==3.4.1
+mpld3==0.5.2

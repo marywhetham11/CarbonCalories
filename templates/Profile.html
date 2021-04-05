@@ -1,0 +1,118 @@
+<!doctype html>
+
+<head>
+    <title>Profile</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="{{ url_for('static',filename='js/circle.js') }}"></script>
+</head>
+
+<body>
+
+    <!--Header-->
+    <div class="header">
+        <div class="header-left">
+            <span class="iconify" data-icon="simple-icons:countingworkspro" data-inline="false" data-width="45px" data-height="45px"></span>
+            <h1>Carbon Calories</h1>
+        </div>
+        <div class="header-right">
+            <a class="Home" href="/">Home</a>
+            <a class="FAQ" href="/faq">FAQ</a>
+            <a class="Profile" href="/profile">Profile</a>
+            <a class="Log-out" href="/logout">Log out</a>
+        </div>
+
+    </div>
+
+    <div class="header-placeholder"></div>
+
+
+
+    <div class="profile">
+        <!-- The sidebar -->
+        <div class="sidebar">
+            <div class="inner-sidebar">
+                <div class="sidebar-container">
+                    <a href="/profile" class="active">
+                        <span class="iconify" data-icon="carbon:settings" data-inline="false" data-width="45px" data-height="45px"></span> Score
+                    </a>
+                    <a href="/history">
+                        <span class="iconify" data-icon="ic:baseline-content-paste" data-inline="false" data-width="45px" data-height="45px"></span> History
+                    </a>
+                    <a href="/analytics">
+                        <span class="iconify" data-icon="ion:analytics" data-inline="false" data-width="45px" data-height="45px"></span> Analytics
+                    </a>
+                    <a href="/search">
+                        <span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" data-width="45px" data-height="45px"></span> Search
+                    </a>
+                    <a href="/settings">
+                        <span class="iconify" data-icon="carbon:progress-bar-round" data-inline="false" data-width="45px" data-height="45px"></span> Settings
+                    </a>
+                </div>
+                <div class="sidebar-footer">
+                    <a href="">
+                        <span class="iconify" data-icon="gg:profile" data-inline="false" data-width="45px" data-height="45px"></span> {{ username }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="placeholder"></div>
+
+        <!-- CarbonScoreChart -->
+
+        <div class="content">
+            <div class="scores">
+                <!--<a id="piechart"></a>-->
+                <div class="CarbonScoreChart">
+                    <svg preserveAspectRatio="xMinYMin meet">
+						<circle cx="110" cy="110" r="110" id="yourCircle"></circle>
+					</svg>
+                    <div class="number">
+                        <h2>{{ yourScore }}</h2>
+                    </div>
+                    <script>
+                        chooseColour('{{ yourScore }}', 'yourCircle', 110);
+                    </script>
+                </div>
+                <span class="CarbonScorePara">
+					<h3>Your Carbon Score</h3>
+					<hr>
+					<h4>This carbon score is based on your online grocery purchases from this month. 
+					Visit the FAQ page for more information on how this score is calculated!
+					</h4>
+				</span>
+
+
+            </div>
+
+            <div class="scores">
+                <!--<a id="piechart"></a>-->
+
+                <span class="AverageScorePara">
+					<h3>Average Score</h3>
+					<hr>
+					<h4>{{ message }}</h4>
+				</span>
+                <div class="AverageScoreChart">
+                    <svg>
+						<circle cx="110" cy="110" r="110" id="avgCircle"></circle>
+					</svg>
+                    <div class="number">
+                        <h2>{{ avgScore }}</h2>
+                    </div>
+                    <script>
+                        chooseColour('{{ avgScore }}', 'avgCircle', 110);
+                    </script>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+
+    <!--Header-->
+    <div class="header">
+        <div class="header-left">
+            <span class="iconify" data-icon="simple-icons:countingworkspro" data-inline="false" data-width="45px" data-height="45px"></span>
+            <h1>Carbon Calories</h1>
+        </div>
+        <div class="header-right">
+            <a class="Home" href="/">Home</a>
+            <a class="FAQ" href="/faq">FAQ</a>
+            <a class="Profile" href="/profile">Profile</a>
+            <a class="Log-out" href="/logout">Log out</a>
+        </div>
+
+    </div>
+
+    <div class="header-placeholder"></div>
+
+    <div class="poster">
+        <h1>Carbon Calories</h1>
+        <h2>We aim to help save the planet starting with the food that we eat. Everyone can make simple changes to the food that they buy in order to lower their carbon footprint.</h2>
+    </div>
+    <div class="row">
+        <div class="column">
+            <a href="/faq">
+                <div class="inner-column">
+                    <h1>FAQ</h1>
+                    <h2>Visit our FAQ <br> page</h2>
+                </div>
+            </a>
+        </div>
+        <div class="column">
+            <!--link to extension page-->
+            <a href="">
+                <div class="inner-column">
+                    <img src="{{ url_for('static',filename='chrome.png') }}" alt="chromelogo">
+                    <h2>Shop using <br> our extension</h2>
+                </div>
+            </a>
+        </div>
+        <div class="column">
+            <!--link to profile page-->
+            <a href="">
+                <div class="inner-column">
+                    <span class="iconify" data-icon="gg:profile" data-inline="false" data-width="180px" data-height="180px"></span>
+                    <h2>View your <br> profile</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

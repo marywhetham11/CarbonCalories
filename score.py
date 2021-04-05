@@ -1,30 +1,24 @@
 # -*- coding: utf-8 -*-
 import mysql.connector
+import datetime
 
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="123mainstreet",
-    database="productInfo"
+    password="",
+    database="carbon_calories"
 )
 
-mycursor = mydb.cursor()
-
-mycursor.execute("SELECT * FROM products")
-products = mycursor.fetchall()
-
-columnWeights = [0.3, 0.2, 0.1, 0.2, 0.2]
-
 def calculateRating(productID):
-    score = 0
-    i = 0
+    mycursor = mydb.cursor()
 
-    while i < len(products):
-        val = products[i][1]
-        if val == productID:
-            break
-        else:
-            i += 1
+    mycursor.execute("SELECT * FROM products where productID = "+ str(productID) + ";")
+    products = mycursor.fetchone()
+
+    print(products[1], products[2])
+
+    columnWeights = [0.3, 0.2, 0.1, 0.3, 0.1]
+    score = 0
 
     score1=0
     score2=0
@@ -33,60 +27,62 @@ def calculateRating(productID):
     score5=0
 
     # Local Calculation
-    if products[i][2] == 1:
+    if products[3] == 1:
         score1 = 100
     else:
         score1 = 0
     
     # Plant Based Calculation
-    if products[i][3] == 1:
+    if products[4] == 1:
         score2 = 100
+    elif products[4] == 2:
+        score2 = 50
     else:
         score2 = 0
     
     # Packaging Calculation
-    packaging = products[i][4].split()
+    packaging = str(products[5]).split()
     j = 0
     while j < len(packaging):
-        if packaging[j] == 'Plastic':
+        if 'Plastic' in packaging[j]:
+            print("We here bishes")
             score3 = score3 - 30
-            j = j+1
-        elif packaging[j] == 'Paper':
+        if 'Paper' in packaging[j]:
             score3 = score3 - 10
-            j = j+1
-        elif packaging[j] == 'Styrofoam':
+        if 'Styrofoam' in packaging[j]:
             score3 = score3 - 15
-            j = j+1
-        elif packaging[j] == 'Glass':
+        if 'Glass' in packaging[j]:
             score3 = score3 - 20
-            j = j+1
-        elif packaging[j] == 'Metal':
+        if 'Metal' in packaging[j]:
             score3 = score3 - 25
-            j = j+1
-        else:
-            j = j+1
+        j = j+1
     
     # Meat Calculation
-    if products[i][5] == 'red':
-        score4 = score4 - 70
-    elif products[i][5] == 'white':
+    if products[6] == 'Red':
+        score4 = score4 - 90
+    elif products[6] == 'White':
         score4 = score4 - 30
     
     # Seasonal Calculation
-    if products[i][6] == 1:
+    if products[7] == 1:
         score5 = 0
-    elif products[i][6] == 0:
+    elif products[7] == 0:
         score5 = 100
-
-    print(score1)
-    print(score2)
-    print(score3)
-    print(score4)
-    print(score5)
 
     score = ((score1 * columnWeights[0]) + (score2 * columnWeights[1]) + (score3 * columnWeights[2]) + (score4 * columnWeights[3]) + (score5 * columnWeights[4])) / 10
     return score
 
-print(calculateRating(8103403))
+def this(productID):
+    mycursor = mydb.cursor()
+
+    mycursor.execute("SELECT * FROM products where productName like '%"+ str(productID) + "%';")
+    products = mycursor.fetchall()
+
+    for product in products:
+        print(product[1], calculateRating(product[2]))
+
+this('Avo')
+
 
 mydb.close()
+

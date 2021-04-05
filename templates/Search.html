@@ -1,0 +1,87 @@
+<!doctype html>
+
+<head>
+    <title>Search</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+
+    <!--Header-->
+    <div class="header">
+        <div class="header-left">
+            <span class="iconify" data-icon="simple-icons:countingworkspro" data-inline="false" data-width="45px" data-height="45px"></span>
+            <h1>Carbon Calories</h1>
+        </div>
+        <div class="header-right">
+            <a class="Home" href="/">Home</a>
+            <a class="FAQ" href="/faq">FAQ</a>
+            <a class="Profile" href="/profile">Profile</a>
+            <a class="Log-out" href="/logout">Log out</a>
+        </div>
+
+    </div>
+
+    <div class="header-placeholder"></div>
+
+
+
+    <div class="profile">
+        <!-- The sidebar -->
+        <div class="sidebar">
+            <div class="inner-sidebar">
+                <div class="sidebar-container">
+                    <a href="/profile">
+                        <span class="iconify" data-icon="carbon:settings" data-inline="false" data-width="45px" data-height="45px"></span> Score
+                    </a>
+                    <a href="/history">
+                        <span class="iconify" data-icon="ic:baseline-content-paste" data-inline="false" data-width="45px" data-height="45px"></span> History
+                    </a>
+                    <a href="/analytics">
+                        <span class="iconify" data-icon="ion:analytics" data-inline="false" data-width="45px" data-height="45px"></span> Analytics
+                    </a>
+                    <a href="/search" class="active">
+                        <span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" data-width="45px" data-height="45px"></span> Search
+                    </a>
+                    <a href="/settings">
+                        <span class="iconify" data-icon="carbon:progress-bar-round" data-inline="false" data-width="45px" data-height="45px"></span> Settings
+                    </a>
+                </div>
+                <div class="sidebar-footer">
+                    <a href="">
+                        <span class="iconify" data-icon="gg:profile" data-inline="false" data-width="45px" data-height="45px"></span> {{ username }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="placeholder"></div>
+
+        <div class="search">
+            <form action="/search" method="post">
+
+                <div class="to-search">
+                    <label for="search">
+                        <span class="iconify" data-icon="ant-design:search-outlined" data-inline="false" data-width="65px" data-height="65px"></span>
+                    </label>
+                    <input type="text" placeholder="Find a product's score" name="search" required>
+                    <button type="submit">Search</button>
+
+                </div>
+
+            </form>
+            <br> {% for product in products %}
+            <div class="product">
+                <h2>{{ product[0] }}</h2>
+                <h2>Score: {{ product[1] }}</h2>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Bordered form */
+
+body {
+    position: relative;
+    /*
+    width: 1000px;
+    height: 421px;
+    */
+    font-family: Montserrat;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    /*background: linear-gradient(69.47deg, #63A583 0%, #6E93D6 100%);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 0.5;
+    margin: 0;
+    height: 100vh;
+}
+
+#register h2 {
+    margin: 4vh;
+}
+
+.container {
+    width: 100%;
+    height: 88vh;
+    margin: 3vh 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(69.47deg, #63A583 0%, #6E93D6 100%);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.options {
+    position: fixed;
+    top: 9%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+    height: 7.5%;
+    border: 2px solid #111B1E;
+    border-radius: 10px;
+}
+
+.options h2 {
+    font-size: 24px;
+}
+
+.each-option {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1%;
+    border-radius: 10px;
+    color: #111B1E;
+}
+
+#register {
+    margin-top: 9%;
+}
+
+#login-option {
+    background-color: #E4DBD9;
+}
+
+#register {
+    display: none;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* inputs */
+
+label {
+    text-align: right;
+    margin-right: 15px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+select {
+    left: 100px;
+    top: 139px;
+    width: 50%;
+    padding: 1vh 20px;
+    margin: 1vh 0px;
+    margin-left: 15px;
+    /*display: inline-block;*/
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+}
+
+select {
+    color: rgb(118, 118, 118);
+}
+
+
+/* Set a style for buttons */
+
+button {
+    background-color: #E4DBD9;
+    color: #000000;
+    padding: 14px 20px;
+    margin: 4vh 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+
+/* Add a hover effect for buttons */
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 1000px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}

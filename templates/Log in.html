@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log in </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style_login.css') }}">
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="options">
+            <div class="each-option" id="login-option" onclick="switchItem('login')">
+                <h2>Login</h2>
+            </div>
+            <div class="each-option" id="register-option" onclick="switchItem('register')">
+                <h2>Register</h2>
+            </div>
+        </div>
+
+        <div id="login">
+
+            <h2>Welcome back!</h2>
+            <br> {% if message != None %}
+            <h4>{{ message }}</h4>
+            {% endif %}
+            <form action="/login" method="post">
+
+                <div>
+                    <div class="block">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+                    </div>
+                    <div class="block">
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+
+                </div>
+
+            </form>
+
+        </div>
+        <div id="register">
+
+            <h2>Welcome!</h2><br>
+            <form action="/register" method="post">
+
+                <div>
+                    <div class="block">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+                    </div>
+                    <div class="block">
+                        <label for="email"><b>Email</b></label>
+                        <input type="email" placeholder="Enter Email" name="email" required>
+                    </div>
+                    <div class="block">
+                        <label for="location"><b>Location</b></label>
+                        <select name="location">
+                            <option value="" selected="selected">Choose City</option>
+                            <option value="Kingston">Kingston</option>
+                            <option value="Toronto">Toronto</option>
+                            <option value="Montreal">Montreal</option>
+                        </select>
+                    </div>
+
+                    <div class="block">
+                        <label for="address"><b>Address</b></label>
+                        <input type="text" placeholder="Enter Address" name="address" required>
+                    </div>
+
+                    <div class="block">
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
